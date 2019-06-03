@@ -18,7 +18,8 @@ package org.apache.sis.internal.system;
 
 import java.lang.ref.ReferenceQueue;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
@@ -43,10 +44,13 @@ public final strictfp class ReferenceQueueConsumerTest extends TestCase {
      *
      * @throws InterruptedException this is the excepted exception.
      */
-    @Test(expected=InterruptedException.class)
+    @Test()
     public void verifyInterruptAssumption() throws InterruptedException {
-        final ReferenceQueue<Object> queue = new ReferenceQueue<>();
-        Thread.currentThread().interrupt();
-        assertNull(queue.remove(1000));
+        Assertions.assertThrows(InterruptedException.class, () -> {
+            final ReferenceQueue<Object> queue = new ReferenceQueue<>();
+            Thread.currentThread().interrupt();
+            assertNull(queue.remove(1000));
+        });
+
     }
 }

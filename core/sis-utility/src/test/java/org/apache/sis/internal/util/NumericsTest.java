@@ -22,7 +22,7 @@ import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.util.ComparisonMode;
 import org.apache.sis.math.Vector;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static java.lang.Double.POSITIVE_INFINITY;

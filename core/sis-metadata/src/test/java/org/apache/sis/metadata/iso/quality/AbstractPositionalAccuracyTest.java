@@ -25,7 +25,7 @@ import org.apache.sis.util.Version;
 import org.apache.sis.metadata.xml.TestUsingFile;
 import org.apache.sis.test.DependsOn;
 import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 import static org.apache.sis.test.TestUtilities.getSingleton;

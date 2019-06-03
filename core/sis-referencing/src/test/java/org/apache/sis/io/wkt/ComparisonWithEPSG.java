@@ -24,7 +24,7 @@ import org.apache.sis.referencing.CRS;
 import org.apache.sis.test.TestCase;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.junit.Assume.assumeNotNull;

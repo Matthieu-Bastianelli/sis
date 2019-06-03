@@ -29,7 +29,7 @@ import org.opengis.util.FactoryException;
 import org.opengis.referencing.operation.TransformException;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestStep;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

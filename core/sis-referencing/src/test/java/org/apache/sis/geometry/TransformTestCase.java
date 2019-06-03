@@ -35,7 +35,7 @@ import org.apache.sis.referencing.crs.HardCodedCRS;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.internal.referencing.Formulas.ANGULAR_TOLERANCE;
 import static org.apache.sis.internal.referencing.Formulas.LINEAR_TOLERANCE;

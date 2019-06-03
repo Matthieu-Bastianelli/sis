@@ -25,7 +25,7 @@ import org.apache.sis.internal.system.DefaultFactories;
 import org.apache.sis.referencing.crs.HardCodedCRS;
 import org.apache.sis.test.mock.IdentifiedObjectMock;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static org.apache.sis.referencing.IdentifiedObjects.*;

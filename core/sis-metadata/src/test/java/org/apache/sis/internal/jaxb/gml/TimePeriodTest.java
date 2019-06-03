@@ -31,7 +31,7 @@ import org.apache.sis.internal.xml.XmlUtilities;
 import org.apache.sis.test.xml.TestCase;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static org.apache.sis.test.TestUtilities.date;

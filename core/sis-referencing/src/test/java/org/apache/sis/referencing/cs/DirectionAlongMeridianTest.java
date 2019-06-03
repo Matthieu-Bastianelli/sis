@@ -20,7 +20,7 @@ import org.opengis.referencing.cs.AxisDirection;
 import org.apache.sis.io.wkt.Convention;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 

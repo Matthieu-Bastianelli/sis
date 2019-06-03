@@ -26,7 +26,7 @@ import org.apache.sis.xml.Namespaces;
 import org.apache.sis.xml.NilObject;
 import org.apache.sis.metadata.xml.TestUsingFile;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static org.apache.sis.test.TestUtilities.date;

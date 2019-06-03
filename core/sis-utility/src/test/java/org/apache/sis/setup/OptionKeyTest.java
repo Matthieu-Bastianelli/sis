@@ -19,7 +19,7 @@ package org.apache.sis.setup;
 import java.util.Map;
 import org.apache.sis.util.collection.CheckedContainer;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.apache.sis.setup.OptionKey.*;

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import org.opengis.metadata.Identifier;
 import org.opengis.metadata.citation.Citation;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.apache.sis.xml.IdentifierSpace.*;

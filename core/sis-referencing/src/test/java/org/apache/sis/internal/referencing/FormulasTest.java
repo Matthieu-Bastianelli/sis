@@ -20,7 +20,7 @@ import org.apache.sis.internal.metadata.ReferencingServices;
 import org.apache.sis.measure.Longitude;
 import org.apache.sis.referencing.datum.HardCodedDatum;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

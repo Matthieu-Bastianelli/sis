@@ -24,7 +24,7 @@ import org.apache.sis.internal.referencing.Formulas;
 import org.apache.sis.internal.referencing.provider.ObliqueStereographic;
 import org.apache.sis.parameter.Parameters;
 import org.opengis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static org.opengis.test.Assert.*;

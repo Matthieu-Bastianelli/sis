@@ -28,7 +28,7 @@ import org.apache.sis.util.Version;
 import org.apache.sis.xml.XML;
 import org.apache.sis.xml.MarshallerPool;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singletonMap;
 import static org.apache.sis.test.MetadataAssert.*;

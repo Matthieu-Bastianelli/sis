@@ -25,7 +25,7 @@ import org.apache.sis.util.ComparisonMode;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singletonMap;
 import static org.apache.sis.test.MetadataAssert.*;

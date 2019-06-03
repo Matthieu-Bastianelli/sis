@@ -24,7 +24,7 @@ import org.opengis.parameter.GeneralParameterDescriptor;
 import org.apache.sis.metadata.iso.citation.Citations;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.ReferencingAssert.*;
 import static org.apache.sis.internal.util.Constants.*;

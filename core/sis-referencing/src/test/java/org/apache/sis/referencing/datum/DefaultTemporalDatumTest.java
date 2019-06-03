@@ -24,7 +24,7 @@ import org.apache.sis.io.wkt.Convention;
 import org.apache.sis.metadata.iso.ImmutableIdentifier;
 import org.apache.sis.metadata.iso.citation.HardCodedCitations;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.ReferencingAssert.*;
 import static org.apache.sis.test.TestUtilities.getSingleton;

@@ -20,7 +20,7 @@ import javax.xml.bind.JAXBException;
 import org.opengis.metadata.citation.Role;
 import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.internal.xml.LegacyNamespaces;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singleton;
 import static org.apache.sis.test.MetadataAssert.*;

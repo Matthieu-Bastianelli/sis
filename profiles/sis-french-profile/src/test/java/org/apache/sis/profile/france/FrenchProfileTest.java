@@ -28,7 +28,7 @@ import org.apache.sis.internal.profile.fra.IndirectReferenceSystem;
 import org.apache.sis.internal.profile.fra.DirectReferenceSystem;
 import org.apache.sis.metadata.iso.ImmutableIdentifier;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 import static org.apache.sis.test.TestUtilities.getSingleton;

@@ -21,7 +21,7 @@ import org.opengis.referencing.operation.MathTransform1D;
 import org.opengis.referencing.operation.NoninvertibleTransformException;
 import org.opengis.referencing.operation.TransformException;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

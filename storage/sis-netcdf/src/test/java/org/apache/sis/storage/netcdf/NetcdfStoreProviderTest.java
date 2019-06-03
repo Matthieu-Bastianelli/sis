@@ -29,7 +29,7 @@ import org.apache.sis.storage.DataStoreException;
 import org.apache.sis.util.Version;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.internal.netcdf.TestData;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

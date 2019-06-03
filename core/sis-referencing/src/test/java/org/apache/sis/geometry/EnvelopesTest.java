@@ -34,7 +34,7 @@ import org.apache.sis.referencing.cs.AxesConvention;
 import org.apache.sis.referencing.CRS;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.ReferencingAssert.*;
 import static org.opengis.test.Validators.validate;

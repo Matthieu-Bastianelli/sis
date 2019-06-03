@@ -19,7 +19,7 @@ package org.apache.sis.math;
 import java.text.Format;
 import java.text.NumberFormat;
 import java.util.Locale;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOnMethod;
 

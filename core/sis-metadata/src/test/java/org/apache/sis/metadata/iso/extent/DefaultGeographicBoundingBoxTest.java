@@ -17,13 +17,15 @@
 package org.apache.sis.metadata.iso.extent;
 
 import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
 import org.opengis.metadata.extent.GeographicBoundingBox;
 import org.apache.sis.measure.Latitude;
 import org.apache.sis.measure.Longitude;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static org.apache.sis.test.Assert.*;
@@ -64,9 +66,12 @@ public final strictfp class DefaultGeographicBoundingBoxTest extends TestCase {
      * Tests construction with an invalid range of latitudes.
      */
     @SuppressWarnings("ResultOfObjectAllocationIgnored")
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     public void testInvalidLatitudeRange() {
-        new DefaultGeographicBoundingBox(-1, +1, 12, 10);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            new DefaultGeographicBoundingBox(-1, +1, 12, 10);
+        });
+
     }
 
     /**

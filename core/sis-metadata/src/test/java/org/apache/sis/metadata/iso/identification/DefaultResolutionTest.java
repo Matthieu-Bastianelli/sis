@@ -27,7 +27,7 @@ import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.test.DependsOn;
 import org.junit.After;
 import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 

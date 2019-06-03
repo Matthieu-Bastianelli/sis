@@ -32,7 +32,7 @@ import org.apache.sis.internal.referencing.provider.GeocentricTranslationTest;
 import org.apache.sis.referencing.datum.HardCodedDatum;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 

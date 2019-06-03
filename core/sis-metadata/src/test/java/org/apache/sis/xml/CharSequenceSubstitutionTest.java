@@ -27,7 +27,7 @@ import org.apache.sis.internal.metadata.SensorType;
 import org.apache.sis.util.iso.Types;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 

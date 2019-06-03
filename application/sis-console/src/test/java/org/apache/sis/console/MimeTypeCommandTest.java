@@ -20,7 +20,7 @@ import java.net.URL;
 import org.apache.sis.internal.storage.gpx.MetadataTest;
 import org.apache.sis.metadata.xml.TestUsingFile;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static org.apache.sis.metadata.iso.extent.DefaultExtentTest.FILENAME;

@@ -25,7 +25,7 @@ import org.apache.sis.internal.referencing.Formulas;
 import org.apache.sis.internal.referencing.provider.GeocentricTranslationTest;
 import org.apache.sis.internal.referencing.provider.MolodenskyInterpolation;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 /**

@@ -24,7 +24,7 @@ import org.apache.sis.referencing.operation.builder.LocalizationGridBuilder;
 import org.apache.sis.referencing.operation.transform.MathTransformTestCase;
 import org.apache.sis.referencing.operation.transform.CoordinateDomain;
 import org.apache.sis.internal.system.DefaultFactories;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 /**

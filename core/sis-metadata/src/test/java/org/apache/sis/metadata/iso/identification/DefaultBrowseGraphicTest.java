@@ -31,7 +31,7 @@ import org.apache.sis.xml.Namespaces;
 import org.apache.sis.xml.XML;
 import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static java.util.Collections.singletonMap;

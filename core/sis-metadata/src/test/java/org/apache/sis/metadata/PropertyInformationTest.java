@@ -32,7 +32,7 @@ import org.apache.sis.measure.ValueRange;
 import org.apache.sis.measure.Range;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static org.apache.sis.test.TestUtilities.getSingleton;

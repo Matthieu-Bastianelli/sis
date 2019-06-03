@@ -25,7 +25,7 @@ import org.apache.sis.xml.ReferenceResolverMock;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

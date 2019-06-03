@@ -24,7 +24,7 @@ import org.apache.sis.util.iso.DefaultInternationalString;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.apache.sis.util.collection.TableColumn.*;

@@ -46,7 +46,7 @@ import org.apache.sis.util.iso.DefaultInternationalString;
 import org.apache.sis.util.Version;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestUtilities;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.TestUtilities.getSingleton;
 import static org.apache.sis.test.MetadataAssert.*;

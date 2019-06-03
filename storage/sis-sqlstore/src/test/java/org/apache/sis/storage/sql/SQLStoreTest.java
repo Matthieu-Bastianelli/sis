@@ -26,7 +26,7 @@ import org.apache.sis.storage.FeatureSet;
 import org.apache.sis.storage.StorageConnector;
 import org.apache.sis.test.sql.TestDatabase;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 

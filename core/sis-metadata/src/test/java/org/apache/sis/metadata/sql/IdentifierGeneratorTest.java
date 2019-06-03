@@ -22,7 +22,7 @@ import org.apache.sis.internal.metadata.sql.SQLBuilder;
 import org.apache.sis.test.sql.TestDatabase;
 import org.apache.sis.metadata.MetadataStandard;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

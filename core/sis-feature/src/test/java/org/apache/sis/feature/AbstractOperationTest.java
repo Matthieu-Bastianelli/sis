@@ -20,7 +20,7 @@ import org.opengis.parameter.ParameterDescriptor;
 import org.apache.sis.parameter.ParameterBuilder;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singletonMap;
 import static org.apache.sis.test.Assert.*;

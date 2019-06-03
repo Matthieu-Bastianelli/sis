@@ -22,7 +22,7 @@ import org.opengis.referencing.operation.Matrix;
 import org.opengis.referencing.operation.TransformException;
 
 // Test imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestRunner;

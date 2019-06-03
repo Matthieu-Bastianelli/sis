@@ -23,7 +23,7 @@ import org.apache.sis.internal.metadata.AxisDirections;
 import org.apache.sis.measure.Units;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 

@@ -23,7 +23,7 @@ import org.apache.sis.test.TestRunner;
 import org.junit.runner.RunWith;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

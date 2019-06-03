@@ -23,7 +23,7 @@ import org.opengis.metadata.identification.TopicCategory;
 import org.apache.sis.metadata.iso.identification.DefaultDataIdentification;
 import org.apache.sis.xml.Namespaces;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 

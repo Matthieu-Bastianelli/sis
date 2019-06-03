@@ -25,7 +25,7 @@ import org.apache.sis.io.wkt.Convention;
 import org.apache.sis.referencing.operation.transform.CoordinateDomain;
 import org.apache.sis.referencing.operation.transform.MathTransformFactoryMock;
 import org.apache.sis.test.ReferencingAssert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static java.lang.StrictMath.toRadians;

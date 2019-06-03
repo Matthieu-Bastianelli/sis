@@ -19,7 +19,7 @@ package org.apache.sis.measure;
 import java.util.Locale;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static java.lang.Double.doubleToLongBits;

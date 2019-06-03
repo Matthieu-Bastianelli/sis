@@ -28,7 +28,7 @@ import org.apache.sis.storage.DataStoreException;
 import org.apache.sis.util.logging.EmptyWarningListeners;
 import org.apache.sis.internal.system.Modules;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.apache.sis.test.TestUtilities.formatMetadata;

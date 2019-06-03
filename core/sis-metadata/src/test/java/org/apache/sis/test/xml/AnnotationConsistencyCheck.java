@@ -41,7 +41,7 @@ import org.apache.sis.internal.xml.LegacyNamespaces;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import junit.framework.AssertionFailedError;
 
 

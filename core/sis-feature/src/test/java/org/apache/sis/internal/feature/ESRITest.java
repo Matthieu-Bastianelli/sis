@@ -18,7 +18,7 @@ package org.apache.sis.internal.feature;
 
 import com.esri.core.geometry.Polyline;
 import org.apache.sis.util.StringBuilders;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

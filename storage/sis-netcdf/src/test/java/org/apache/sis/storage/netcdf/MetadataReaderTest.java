@@ -33,7 +33,7 @@ import org.apache.sis.internal.netcdf.impl.ChannelDecoderTest;
 import org.apache.sis.storage.DataStoreException;
 import org.apache.sis.test.ContentVerifier;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.apache.sis.test.TestUtilities.date;

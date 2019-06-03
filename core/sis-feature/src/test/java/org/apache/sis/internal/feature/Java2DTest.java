@@ -17,7 +17,7 @@
 package org.apache.sis.internal.feature;
 
 import java.awt.geom.Path2D;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

@@ -23,7 +23,7 @@ import java.text.AttributedCharacterIterator;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.internal.simple.SimpleCharacterIterator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.min;
 import static java.lang.StrictMath.max;

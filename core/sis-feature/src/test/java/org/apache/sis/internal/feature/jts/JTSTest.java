@@ -27,7 +27,7 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.apache.sis.referencing.CommonCRS;
 import org.apache.sis.internal.referencing.j2d.AffineTransform2D;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

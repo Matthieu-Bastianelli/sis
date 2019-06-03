@@ -25,7 +25,7 @@ import org.apache.sis.metadata.PropertyConsistencyCheck;
 import org.apache.sis.test.LoggingWatcher;
 import org.apache.sis.test.DependsOn;
 import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 /**

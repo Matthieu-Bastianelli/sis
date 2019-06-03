@@ -26,7 +26,7 @@ import org.apache.sis.measure.Units;
 import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singletonMap;
 import static org.opengis.referencing.IdentifiedObject.NAME_KEY;

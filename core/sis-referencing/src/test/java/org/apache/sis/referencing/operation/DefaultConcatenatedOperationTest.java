@@ -33,7 +33,7 @@ import org.apache.sis.io.wkt.Convention;
 import org.opengis.test.Validators;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static org.apache.sis.test.TestUtilities.getSingleton;

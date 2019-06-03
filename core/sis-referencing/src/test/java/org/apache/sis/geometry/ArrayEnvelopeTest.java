@@ -19,7 +19,8 @@ package org.apache.sis.geometry;
 import org.apache.sis.io.wkt.Formatter;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 
@@ -97,9 +98,12 @@ public final strictfp class ArrayEnvelopeTest extends TestCase {
     /**
      * Verifies that attempt to create an envelope from an invalid WKT results in an exception.
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     public void testCreatesFromInvalidWKT() {
-        assertNotNull(new ArrayEnvelope("BBOX[\"invalid\"]").ordinates);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            assertNotNull(new ArrayEnvelope("BBOX[\"invalid\"]").ordinates);
+        });
+
     }
 
     /**

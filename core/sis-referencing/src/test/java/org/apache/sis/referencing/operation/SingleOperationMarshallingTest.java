@@ -43,7 +43,7 @@ import org.apache.sis.xml.XML;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.metadata.iso.citation.Citations.EPSG;
 import static org.apache.sis.test.TestUtilities.getSingleton;

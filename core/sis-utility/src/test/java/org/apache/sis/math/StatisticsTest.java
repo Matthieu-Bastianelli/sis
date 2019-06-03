@@ -18,7 +18,7 @@ package org.apache.sis.math;
 
 import java.util.Random;
 import java.io.IOException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 
 import static java.lang.StrictMath.*;

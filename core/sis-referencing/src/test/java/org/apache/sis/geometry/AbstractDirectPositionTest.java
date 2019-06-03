@@ -16,7 +16,7 @@
  */
 package org.apache.sis.geometry;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 
 import static org.apache.sis.test.Assert.*;

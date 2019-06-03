@@ -19,7 +19,7 @@ package org.apache.sis.internal.metadata;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

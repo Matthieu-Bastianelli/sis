@@ -30,7 +30,7 @@ import org.apache.sis.util.CharSequences;
 import org.apache.sis.test.OptionalTestData;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static java.lang.StrictMath.min;

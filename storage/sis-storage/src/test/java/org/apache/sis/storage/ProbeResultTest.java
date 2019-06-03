@@ -17,7 +17,7 @@
 package org.apache.sis.storage;
 
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.apache.sis.storage.ProbeResult.*;

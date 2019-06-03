@@ -30,7 +30,7 @@ import org.apache.sis.referencing.operation.transform.MathTransformFactoryMock;
 import org.apache.sis.parameter.Parameters;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static java.lang.StrictMath.*;

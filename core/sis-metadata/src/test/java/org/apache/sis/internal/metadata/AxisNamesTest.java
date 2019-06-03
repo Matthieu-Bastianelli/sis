@@ -16,7 +16,7 @@
  */
 package org.apache.sis.internal.metadata;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import java.lang.reflect.Field;
 import org.apache.sis.test.TestCase;
 

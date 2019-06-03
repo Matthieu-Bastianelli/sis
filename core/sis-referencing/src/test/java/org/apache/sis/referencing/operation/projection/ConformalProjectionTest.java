@@ -24,7 +24,7 @@ import org.apache.sis.referencing.operation.transform.AbstractMathTransform1D;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestUtilities;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.*;
 import static java.lang.StrictMath.*;

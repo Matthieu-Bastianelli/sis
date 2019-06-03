@@ -19,7 +19,7 @@ package org.apache.sis.util.resources;
 import java.util.Locale;
 import java.util.List;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 

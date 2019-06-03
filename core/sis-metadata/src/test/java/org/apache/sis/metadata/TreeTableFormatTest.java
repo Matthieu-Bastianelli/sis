@@ -33,7 +33,7 @@ import org.apache.sis.metadata.iso.lineage.DefaultProcessing;
 import org.apache.sis.measure.Units;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.singleton;

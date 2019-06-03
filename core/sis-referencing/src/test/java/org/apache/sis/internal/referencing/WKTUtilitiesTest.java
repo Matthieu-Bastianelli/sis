@@ -23,7 +23,7 @@ import org.apache.sis.internal.metadata.WKTKeywords;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.math.Vector;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static org.apache.sis.internal.referencing.WKTUtilities.*;

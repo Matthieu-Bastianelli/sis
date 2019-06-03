@@ -16,7 +16,7 @@
  */
 package org.apache.sis.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 
 import static org.junit.Assert.*;

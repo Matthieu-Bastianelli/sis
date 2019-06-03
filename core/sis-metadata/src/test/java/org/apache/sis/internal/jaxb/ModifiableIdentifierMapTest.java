@@ -28,7 +28,7 @@ import org.apache.sis.xml.IdentifierMap;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.xml.XLink;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.UUID.fromString;
 import static org.apache.sis.test.Assert.*;

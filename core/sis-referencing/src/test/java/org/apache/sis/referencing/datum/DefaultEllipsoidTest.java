@@ -26,7 +26,7 @@ import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static org.apache.sis.test.MetadataAssert.*;

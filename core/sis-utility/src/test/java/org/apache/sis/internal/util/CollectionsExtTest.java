@@ -33,7 +33,7 @@ import java.util.Locale;
 import java.util.function.Predicate;
 import org.apache.sis.util.collection.CodeListSet;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 

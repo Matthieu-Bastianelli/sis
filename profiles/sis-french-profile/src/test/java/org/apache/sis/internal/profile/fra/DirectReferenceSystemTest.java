@@ -27,7 +27,7 @@ import org.apache.sis.metadata.iso.citation.HardCodedCitations;
 import org.apache.sis.util.ComparisonMode;
 import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singleton;
 import static org.apache.sis.test.Assert.*;

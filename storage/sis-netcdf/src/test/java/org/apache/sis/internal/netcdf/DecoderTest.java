@@ -19,7 +19,7 @@ package org.apache.sis.internal.netcdf;
 import java.util.Date;
 import java.io.IOException;
 import org.apache.sis.storage.DataStoreException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static org.apache.sis.test.TestUtilities.date;

@@ -20,7 +20,7 @@ import javax.measure.Unit;
 import javax.measure.Quantity;
 import javax.measure.UnitConverter;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.measure.SexagesimalConverter.*;
 import static org.apache.sis.test.Assert.*;

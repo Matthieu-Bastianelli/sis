@@ -21,7 +21,7 @@ import org.opengis.referencing.operation.TransformException;
 import org.apache.sis.internal.referencing.Formulas;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 /**

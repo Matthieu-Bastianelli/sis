@@ -23,7 +23,7 @@ import static java.lang.StrictMath.*;
 import static org.apache.sis.referencing.operation.transform.IterationStrategy.*;
 
 // Test imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOnMethod;
 import static org.junit.Assert.*;

@@ -16,7 +16,7 @@
  */
 package org.apache.sis.referencing.operation.matrix;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.DependsOn;
 
 import static org.junit.Assert.*;

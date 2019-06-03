@@ -32,7 +32,7 @@ import javax.measure.quantity.Volume;
 import javax.measure.IncommensurableException;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.measure.SexagesimalConverter.*;
 import static org.apache.sis.measure.Units.*;

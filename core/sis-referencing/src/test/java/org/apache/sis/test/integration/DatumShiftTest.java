@@ -26,7 +26,7 @@ import org.apache.sis.internal.referencing.provider.FranceGeocentricInterpolatio
 import org.apache.sis.internal.system.DataDirectory;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assume.*;
 

@@ -35,7 +35,7 @@ import org.junit.After;
 import static org.opengis.test.Assert.*;
 
 // Branch-dependent imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.Ignore;
 import org.opengis.util.FactoryException;
 import org.opengis.referencing.operation.TransformException;

@@ -22,7 +22,7 @@ import org.apache.sis.math.Vector;
 import org.apache.sis.geometry.GeneralEnvelope;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static org.junit.Assert.*;

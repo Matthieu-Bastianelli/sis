@@ -29,7 +29,7 @@ import org.apache.sis.internal.system.DefaultFactories;
 import org.apache.sis.measure.Units;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static org.apache.sis.test.Assert.*;

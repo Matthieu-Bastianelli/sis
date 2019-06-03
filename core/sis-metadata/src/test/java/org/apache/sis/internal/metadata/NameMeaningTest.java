@@ -26,7 +26,7 @@ import org.opengis.referencing.operation.CoordinateOperation;
 import org.opengis.parameter.ParameterDescriptor;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

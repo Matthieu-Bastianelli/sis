@@ -18,7 +18,7 @@ package org.apache.sis.util.collection;
 
 import java.util.List;
 import java.util.Collection;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.TestStep;
 import org.apache.sis.test.DependsOn;

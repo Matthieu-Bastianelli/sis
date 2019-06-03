@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.Arrays;
 import java.io.PrintWriter;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.Description;
 import org.junit.runner.manipulation.Filter;
 import org.junit.runner.manipulation.NoTestsRemainException;

@@ -22,6 +22,7 @@ import java.util.Properties;
 import org.apache.sis.internal.shapefile.jdbc.connection.DBFConnection;
 import org.apache.sis.test.DependsOnMethod;
 import org.junit.*;
+import org.junit.jupiter.api.Assertions;
 
 import static org.junit.Assert.*;
 
@@ -73,20 +74,23 @@ public class DBFConnectionTest extends AbstractTestBaseForInternalJDBC {
      * An attempt to use a closed connection must fail with the correct exception.
      * @throws SQLException if an error occurred while opening the database.
      */
-    @Test(expected=SQLConnectionClosedException.class)
+    @Test()
     @DependsOnMethod("openCloseConnection")
     public void connectionClosed() throws SQLException {
-        // Open and close an connection.
-        final Driver driver = new DBFDriver();
-        final Connection connection = driver.connect(this.dbfFile.getAbsolutePath(), null);
-        connection.close();
+        Assertions.assertThrows(SQLConnectionClosedException.class, () -> {
+            // Open and close an connection.
+            final Driver driver = new DBFDriver();
+            final Connection connection = driver.connect(this.dbfFile.getAbsolutePath(), null);
+            connection.close();
 
-        // Then, attempt to use it.
-        try {
-            connection.createStatement();
-        } catch(SQLConnectionClosedException e) {
-            assertEquals("The database name in this exception is not well set.", e.getDatabase().getName(), this.dbfFile.getName());
-            throw e;
-        }
+            // Then, attempt to use it.
+            try {
+                connection.createStatement();
+            } catch(SQLConnectionClosedException e) {
+                assertEquals("The database name in this exception is not well set.", e.getDatabase().getName(), this.dbfFile.getName());
+                throw e;
+            }
+        });
+
     }
 }

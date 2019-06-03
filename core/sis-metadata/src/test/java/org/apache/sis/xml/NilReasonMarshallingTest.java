@@ -24,7 +24,7 @@ import org.opengis.metadata.spatial.Dimension;
 import org.opengis.metadata.quality.ConformanceResult;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 

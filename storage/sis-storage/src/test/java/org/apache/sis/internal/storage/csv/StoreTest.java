@@ -28,7 +28,7 @@ import org.apache.sis.storage.DataStoreException;
 import org.apache.sis.storage.StorageConnector;
 import org.apache.sis.storage.DataOptionKey;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import com.esri.core.geometry.Point2D;
 import com.esri.core.geometry.Polyline;
 

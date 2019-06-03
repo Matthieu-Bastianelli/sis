@@ -27,7 +27,7 @@ import java.nio.InvalidMarkException;
 import java.nio.channels.ByteChannel;
 import javax.imageio.stream.ImageOutputStream;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

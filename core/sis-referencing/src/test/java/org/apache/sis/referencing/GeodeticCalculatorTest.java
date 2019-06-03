@@ -42,7 +42,7 @@ import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.TestCase;
 import net.sf.geographiclib.Geodesic;
 import net.sf.geographiclib.GeodesicData;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static org.opengis.test.Assert.*;

@@ -27,7 +27,7 @@ import org.apache.sis.internal.referencing.provider.MillerCylindrical;
 import org.apache.sis.referencing.operation.transform.CoordinateDomain;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.*;
 import static java.lang.StrictMath.*;

@@ -35,7 +35,7 @@ import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.xml.Namespaces;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.metadata.iso.citation.Citations.EPSG;
 import static org.apache.sis.internal.jaxb.referencing.CC_GeneralOperationParameter.DEFAULT_OCCURRENCE;

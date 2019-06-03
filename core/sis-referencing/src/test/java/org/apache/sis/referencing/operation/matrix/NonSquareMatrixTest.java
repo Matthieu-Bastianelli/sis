@@ -20,7 +20,7 @@ import java.util.Random;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestUtilities;
 import org.junit.AfterClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static org.apache.sis.test.Assert.*;

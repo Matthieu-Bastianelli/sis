@@ -20,7 +20,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import org.apache.sis.util.iso.SimpleInternationalString;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

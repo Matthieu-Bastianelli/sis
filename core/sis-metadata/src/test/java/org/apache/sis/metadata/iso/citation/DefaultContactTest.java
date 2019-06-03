@@ -25,7 +25,7 @@ import org.apache.sis.internal.geoapi.evolution.UnsupportedCodeList;
 import org.apache.sis.util.logging.WarningListener;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

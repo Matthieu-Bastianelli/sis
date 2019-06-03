@@ -18,7 +18,7 @@ package org.apache.sis.internal.profile.fra;
 
 import javax.xml.bind.JAXBException;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static org.apache.sis.test.TestUtilities.getSingleton;

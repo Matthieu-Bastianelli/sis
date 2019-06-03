@@ -23,7 +23,7 @@ import org.apache.sis.internal.referencing.provider.LambertCylindricalEqualArea;
 import org.apache.sis.internal.referencing.provider.LambertCylindricalEqualAreaSpherical;
 import org.apache.sis.referencing.operation.transform.CoordinateDomain;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static java.lang.Double.NaN;

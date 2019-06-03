@@ -27,7 +27,7 @@ import org.apache.sis.internal.util.X364;
 import org.apache.sis.test.mock.VerticalCRSMock;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 

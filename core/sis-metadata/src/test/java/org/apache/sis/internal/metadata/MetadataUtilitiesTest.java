@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static java.util.Locale.*;

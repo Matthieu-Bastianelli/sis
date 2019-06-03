@@ -23,7 +23,7 @@ import org.opengis.referencing.operation.TransformException;
 import org.apache.sis.referencing.CRS;
 import org.apache.sis.test.TestCase;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

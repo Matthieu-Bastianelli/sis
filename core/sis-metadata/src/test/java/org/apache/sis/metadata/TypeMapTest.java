@@ -35,7 +35,7 @@ import org.apache.sis.metadata.iso.extent.AbstractGeographicExtent;
 import org.apache.sis.metadata.iso.extent.DefaultGeographicDescription;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static java.util.AbstractMap.SimpleEntry;

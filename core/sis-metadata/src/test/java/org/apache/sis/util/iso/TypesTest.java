@@ -31,7 +31,7 @@ import org.opengis.referencing.datum.Datum;
 import org.opengis.referencing.datum.PixelInCell;
 import org.opengis.referencing.cs.AxisDirection;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 import static org.apache.sis.test.Assert.PENDING_NEXT_GEOAPI_RELEASE;

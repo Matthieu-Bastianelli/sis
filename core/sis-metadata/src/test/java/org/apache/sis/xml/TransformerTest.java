@@ -21,7 +21,7 @@ import java.util.HashSet;
 import java.util.Map;
 import org.apache.sis.internal.xml.LegacyNamespaces;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

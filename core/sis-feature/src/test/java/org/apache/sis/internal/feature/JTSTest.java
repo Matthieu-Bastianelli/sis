@@ -18,7 +18,7 @@ package org.apache.sis.internal.feature;
 
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.MultiLineString;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

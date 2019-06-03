@@ -23,7 +23,7 @@ import org.apache.sis.math.MathFunctions;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOnMethod;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.Double.NaN;
 import static org.opengis.test.Validators.*;

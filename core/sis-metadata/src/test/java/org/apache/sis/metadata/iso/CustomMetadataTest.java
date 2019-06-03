@@ -39,7 +39,7 @@ import org.apache.sis.metadata.iso.citation.DefaultCitation;
 import org.apache.sis.internal.system.DefaultFactories;
 import org.apache.sis.test.xml.TestCase;
 import org.apache.sis.xml.XML;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singleton;
 import static org.junit.Assert.*;

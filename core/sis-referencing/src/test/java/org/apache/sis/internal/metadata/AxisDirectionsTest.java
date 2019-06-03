@@ -26,7 +26,7 @@ import org.apache.sis.referencing.cs.HardCodedCS;
 import org.apache.sis.measure.Units;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static java.lang.StrictMath.abs;

@@ -23,7 +23,7 @@ import javax.xml.bind.JAXBException;
 import org.apache.sis.util.Version;
 import org.apache.sis.metadata.iso.DefaultMetadata;
 import org.apache.sis.metadata.xml.TestUsingFile;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 

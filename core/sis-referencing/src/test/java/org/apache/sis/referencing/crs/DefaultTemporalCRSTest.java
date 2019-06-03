@@ -23,7 +23,7 @@ import org.apache.sis.referencing.datum.DefaultTemporalDatum;
 import org.apache.sis.referencing.cs.HardCodedCS;
 import org.apache.sis.io.wkt.Convention;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.MetadataAssert.*;
 import static org.apache.sis.internal.util.StandardDateFormat.MILLISECONDS_PER_DAY;

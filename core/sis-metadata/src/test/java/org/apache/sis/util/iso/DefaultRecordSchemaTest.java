@@ -24,7 +24,7 @@ import org.opengis.util.MemberName;
 import org.apache.sis.internal.simple.SimpleAttributeType;
 
 // Test imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOn;
 

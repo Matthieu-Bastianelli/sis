@@ -21,7 +21,7 @@ import java.util.Locale;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.datatype.DatatypeConfigurationException;
 import org.apache.sis.test.xml.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static javax.xml.datatype.DatatypeConstants.FIELD_UNDEFINED;

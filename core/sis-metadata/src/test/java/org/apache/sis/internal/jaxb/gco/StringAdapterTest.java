@@ -22,7 +22,7 @@ import org.apache.sis.util.iso.DefaultInternationalString;
 import org.apache.sis.internal.jaxb.Context;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 

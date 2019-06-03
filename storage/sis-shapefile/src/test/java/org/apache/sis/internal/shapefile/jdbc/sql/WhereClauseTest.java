@@ -24,7 +24,7 @@ import java.sql.*;
 
 import org.apache.sis.internal.shapefile.jdbc.AbstractTestBaseForInternalJDBC;
 import org.apache.sis.internal.shapefile.jdbc.resultset.DBFRecordBasedResultSet;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Testing of the WHERE clause in SQL Statements.

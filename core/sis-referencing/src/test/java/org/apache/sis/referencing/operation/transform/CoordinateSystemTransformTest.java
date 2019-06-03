@@ -34,7 +34,7 @@ import org.apache.sis.test.DependsOn;
 import org.apache.sis.util.ArraysExt;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 /**

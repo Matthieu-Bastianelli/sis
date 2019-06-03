@@ -21,7 +21,7 @@ import org.apache.sis.internal.referencing.provider.Affine;
 import org.apache.sis.referencing.operation.matrix.Matrices;
 
 // Test imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
 

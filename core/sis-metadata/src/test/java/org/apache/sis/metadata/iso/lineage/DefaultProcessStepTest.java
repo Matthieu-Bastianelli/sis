@@ -22,7 +22,7 @@ import org.apache.sis.internal.jaxb.gmi.LE_ProcessStep;
 import org.apache.sis.metadata.iso.DefaultIdentifier;
 import org.apache.sis.metadata.xml.TestUsingFile;
 import org.apache.sis.util.Version;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

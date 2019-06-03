@@ -22,7 +22,7 @@ import org.opengis.util.MemberName;
 import org.opengis.util.RecordType;
 
 // Test imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.apache.sis.test.TestCase;

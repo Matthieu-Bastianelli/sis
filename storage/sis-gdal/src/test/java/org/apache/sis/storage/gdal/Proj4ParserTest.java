@@ -23,7 +23,7 @@ import org.apache.sis.internal.referencing.provider.Mercator1SP;
 import org.apache.sis.internal.system.DefaultFactories;
 import org.apache.sis.measure.Units;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.opengis.parameter.ParameterValueGroup;
 
 import static org.opengis.test.Assert.*;

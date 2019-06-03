@@ -20,7 +20,7 @@ import java.util.Arrays;
 import org.apache.sis.io.wkt.Formatter;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 import static org.opengis.test.Validators.*;

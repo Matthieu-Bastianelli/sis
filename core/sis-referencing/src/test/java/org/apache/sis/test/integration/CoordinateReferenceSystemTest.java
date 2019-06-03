@@ -22,7 +22,7 @@ import org.apache.sis.referencing.CRS;
 import org.apache.sis.referencing.factory.TestFactorySource;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeNotNull;

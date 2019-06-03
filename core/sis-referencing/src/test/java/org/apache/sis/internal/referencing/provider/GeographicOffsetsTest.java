@@ -29,7 +29,7 @@ import org.apache.sis.measure.Units;
 import org.opengis.test.referencing.TransformTestCase;
 import org.apache.sis.referencing.cs.HardCodedCS;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 /**

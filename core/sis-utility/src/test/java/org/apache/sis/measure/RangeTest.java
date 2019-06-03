@@ -18,7 +18,8 @@ package org.apache.sis.measure;
 
 import java.util.Locale;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assume.assumeTrue;
 import static org.apache.sis.test.Assert.*;
@@ -80,11 +81,14 @@ public final strictfp class RangeTest extends TestCase {
      *
      * <p>This test requires assertions to be enabled.</p>
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     @SuppressWarnings({"unchecked", "rawtypes", "ResultOfObjectAllocationIgnored"})
     public void testConstructorErrors00() {
-        assumeTrue(Range.class.desiredAssertionStatus());
-        new Range(Double.class, "error", true, "blast", true);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            assumeTrue(Range.class.desiredAssertionStatus());
+            new Range(Double.class, "error", true, "blast", true);
+        });
+
     }
 
     /**
@@ -95,11 +99,14 @@ public final strictfp class RangeTest extends TestCase {
      *
      * <p>This test requires assertions to be enabled.</p>
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test()
     @SuppressWarnings({"unchecked", "rawtypes", "ResultOfObjectAllocationIgnored"})
     public void testConstructorErrors01() {
-        assumeTrue(Range.class.desiredAssertionStatus());
-        new Range(String.class, 123.233, true, 8740.09, true);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            assumeTrue(Range.class.desiredAssertionStatus());
+            new Range(String.class, 123.233, true, 8740.09, true);
+        });
+
     }
 
     /**

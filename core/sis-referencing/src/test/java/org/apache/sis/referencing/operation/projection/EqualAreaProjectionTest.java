@@ -23,7 +23,7 @@ import org.apache.sis.referencing.operation.DefaultOperationMethod;
 import org.apache.sis.internal.util.Constants;
 import org.apache.sis.test.TestUtilities;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static org.apache.sis.math.MathFunctions.atanh;

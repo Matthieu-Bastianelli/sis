@@ -32,7 +32,7 @@ import org.apache.sis.metadata.iso.extent.Extents;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.TestUtilities;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singleton;
 import static org.apache.sis.test.MetadataAssert.*;

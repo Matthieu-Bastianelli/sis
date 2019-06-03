@@ -26,7 +26,7 @@ import org.apache.sis.storage.DataStoreException;
 import org.apache.sis.internal.netcdf.ucar.DecoderWrapper;
 import org.apache.sis.measure.Units;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Assert.*;
 

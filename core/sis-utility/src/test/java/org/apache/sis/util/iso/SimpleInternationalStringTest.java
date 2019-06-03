@@ -18,7 +18,7 @@ package org.apache.sis.util.iso;
 
 import java.util.Locale;
 import org.apache.sis.test.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.opengis.test.Validators.validate;
 import static org.apache.sis.test.Assert.*;

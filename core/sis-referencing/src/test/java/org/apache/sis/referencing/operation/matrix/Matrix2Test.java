@@ -17,7 +17,7 @@
 package org.apache.sis.referencing.operation.matrix;
 
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 import static org.apache.sis.referencing.operation.matrix.Matrix2.SIZE;

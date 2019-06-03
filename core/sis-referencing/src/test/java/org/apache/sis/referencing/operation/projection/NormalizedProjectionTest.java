@@ -18,7 +18,7 @@ package org.apache.sis.referencing.operation.projection;
 
 import org.apache.sis.referencing.operation.transform.TransformTestCase;
 import org.apache.sis.test.DependsOn;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static java.lang.StrictMath.*;
 import static org.apache.sis.internal.metadata.ReferencingServices.NAUTICAL_MILE;

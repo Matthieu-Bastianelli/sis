@@ -25,7 +25,7 @@ import org.apache.sis.math.Fraction;
 import org.apache.sis.test.TestCase;
 import org.apache.sis.test.DependsOnMethod;
 import org.apache.sis.util.UnconvertibleObjectException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.sis.test.Assert.*;
 

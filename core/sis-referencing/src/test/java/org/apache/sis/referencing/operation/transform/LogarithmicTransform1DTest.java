@@ -21,7 +21,7 @@ import org.opengis.referencing.operation.TransformException;
 import static java.lang.StrictMath.*;
 
 // Test imports
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.apache.sis.test.DependsOn;
 import org.apache.sis.test.DependsOnMethod;
 import static org.apache.sis.test.ReferencingAssert.*;
