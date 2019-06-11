@@ -116,7 +116,7 @@ public class GeodeticCalculator {
      *
      * @see #START_POINT
      */
-    private double φ1, λ1;
+    double φ1, λ1;
 
     /**
      * The (<var>latitude</var>, <var>longitude</var>) coordinates of the end point <strong>in radians</strong>.
@@ -124,7 +124,7 @@ public class GeodeticCalculator {
      *
      * @see #END_POINT
      */
-    private double φ2, λ2;
+    double φ2, λ2;
 
     /**
      * The azimuth at start point and end point as vector components.
@@ -142,7 +142,7 @@ public class GeodeticCalculator {
      * @see #STARTING_AZIMUTH
      * @see #ENDING_AZIMUTH
      */
-    private double dφ1, dλ1, dφ2, dλ2;
+    double dφ1, dλ1, dφ2, dλ2;
 
     /**
      * The shortest distance from the starting point ({@link #φ1},{@link #λ1}) to the end point ({@link #φ2},{@link #λ2}).
@@ -151,7 +151,7 @@ public class GeodeticCalculator {
      * @see #GEODESIC_DISTANCE
      * @see #getDistanceUnit()
      */
-    private double geodesicDistance;
+    double geodesicDistance;
 
     /**
      * Length of the rhumb line from the starting point ({@link #φ1},{@link #λ1}) to the end point ({@link #φ2},{@link #λ2}).
@@ -160,7 +160,7 @@ public class GeodeticCalculator {
      * @see #RHUMBLINE_LENGTH
      * @see #getDistanceUnit()
      */
-    private double rhumblineLength;
+    double rhumblineLength;
 
     /**
      * A bitmask specifying which information are valid. For example if the {@link #END_POINT} bit is not set,
@@ -168,12 +168,12 @@ public class GeodeticCalculator {
      * If the {@link #GEODESIC_DISTANCE} bit is not set, then {@link #geodesicDistance} needs to be computed,
      * which implies recomputation of ∂φ/∂λ as well.
      */
-    private int validity;
+    int validity;
 
     /**
      * Bitmask specifying which information are valid.
      */
-    private static final int START_POINT = 1, END_POINT = 2, STARTING_AZIMUTH = 4, ENDING_AZIMUTH = 8,
+    static final int START_POINT = 1, END_POINT = 2, STARTING_AZIMUTH = 4, ENDING_AZIMUTH = 8,
             GEODESIC_DISTANCE = 16, RHUMBLINE_LENGTH = 32;
 
     /**
@@ -219,7 +219,7 @@ public class GeodeticCalculator {
     /**
      * Returns {@code true} if at least one of the properties identified by the given mask is invalid.
      */
-    private boolean isInvalid(final int mask) {
+    boolean isInvalid(final int mask) {
         return (validity & mask) != mask;
     }
 
@@ -544,7 +544,7 @@ public class GeodeticCalculator {
     }
 
     /**
-     * Computes the geodetic distance and azimuths from the start point and end point.
+     * Computes the geodesic distance and azimuths from the start point and end point.
      * This method should be invoked if the distance or an azimuth is requested while
      * {@link #STARTING_AZIMUTH}, {@link #ENDING_AZIMUTH} or {@link #GEODESIC_DISTANCE}
      * validity flag is not set.
@@ -585,6 +585,19 @@ public class GeodeticCalculator {
         geodesicDistance = radius * Δσ;
         validity |= (STARTING_AZIMUTH | ENDING_AZIMUTH | GEODESIC_DISTANCE);
     }
+    
+    /**
+     * Check if the endPoint is computable.
+     * 
+     * @throws IllegalStateException if the azimuth and the distance have not been set.
+     */
+    final void isEndPointComputable(){
+        if (isInvalid(START_POINT | STARTING_AZIMUTH | GEODESIC_DISTANCE)) {
+            throw new IllegalStateException(isInvalid(START_POINT)
+                    ? Resources.format(Resources.Keys.StartOrEndPointNotSet_1, 0)
+                    : Resources.format(Resources.Keys.AzimuthAndDistanceNotSet));
+        }
+    }
 
     /**
      * Computes the end point from the start point, the azimuth and the geodesic distance.
@@ -596,12 +609,8 @@ public class GeodeticCalculator {
      *
      * @throws IllegalStateException if the azimuth and the distance have not been set.
      */
-    void computeEndPoint() {
-        if (isInvalid(START_POINT | STARTING_AZIMUTH | GEODESIC_DISTANCE)) {
-            throw new IllegalStateException(isInvalid(START_POINT)
-                    ? Resources.format(Resources.Keys.StartOrEndPointNotSet_1, 0)
-                    : Resources.format(Resources.Keys.AzimuthAndDistanceNotSet));
-        }
+    void computeEndPoint() {        
+        isEndPointComputable(); // Throws IllegalStateException
         final double vm    = hypot(dφ1, dλ1);
         final double Δσ    = geodesicDistance / radius;
         final double sinΔσ = sin(Δσ);
