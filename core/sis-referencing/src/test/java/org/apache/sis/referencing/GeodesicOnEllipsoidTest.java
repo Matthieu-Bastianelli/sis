@@ -18,8 +18,6 @@
  */
 package org.apache.sis.referencing;
 
-import static java.lang.Math.toRadians;
-import javax.measure.Unit;
 import org.apache.sis.internal.referencing.Formulas;
 import org.apache.sis.internal.referencing.Resources;
 import org.apache.sis.measure.Units;
@@ -38,7 +36,7 @@ public class GeodesicOnEllipsoidTest {
     /**
      * Test if the tested ellipsoid is compatible with the one used in the
      * <a href="https://link.springer.com/content/pdf/10.1007%2Fs00190-012-0578-z.pdf">
-     * article ofCharles F. F. Karney (SRI International)</a>
+     * article of Charles F F Karney (SRI International)</a>.
      */
     @Test
     public void testGeodesicsOnEllipsoidConstructor() {
@@ -88,7 +86,27 @@ public class GeodesicOnEllipsoidTest {
     }
 
     /**
-     * Test on a sample of the direct problem resolution.
+     * Direct geodesic problem solving test with
+     * {@link GeodesicsOnEllipsoid#computeEndPoint()}.
+     *
+     * This test method is based on the given sample (page 46) of
+     * <a href="https://link.springer.com/content/pdf/10.1007%2Fs00190-012-0578-z.pdf">
+     * article of Charles F F Karney (SRI International)</a>
+     *
+     * The test {@link #testGeodesicsOnEllipsoidConstructor()} must be passed to
+     * ensure that the current test is based on the correct ellipsoid of revolution.
+     * 
+     *       φ1 = 40°  (Given)
+     *       α1 = 30°  (Given)
+     *       S12 = geodesicDistance = 10 000 000 m  (Given)
+     * 
+     * In order to facilitate the possible debugging of {@link GeodesicsOnEllipsoid#computeEndPoint()}
+     * Most of the the intermediate variables from Karney's article are checked 
+     * in this method. The unchecked parameters are indicated in code's comments.
+     * 
+     * 
+     *       
+     *
      */
     @Test
     public void directCalculationOnSampleTest() throws TransformException {
@@ -117,13 +135,51 @@ public class GeodesicOnEllipsoidTest {
         } catch (Exception exception) {
             testIndicator = false;
         }
-        assertTrue(testIndicator); //test tha no exception were thrown by #isisEndPointComputable()
-        
+        assertTrue(testIndicator); //test that no exception were thrown by #isisEndPointComputable()
+
         testedEarth.getEndPoint();
+
+        // Test of start point auxiliary parameters :
+        assertEquals("Start point reduce latitude β1", 39.90527714601, Math.toDegrees(testedEarth.auxiliarySpheres.β1), 10e-12);
+        assertEquals("Gesodesic's Equatorial Azimuth α0", 22.55394020262, Math.toDegrees(testedEarth.auxiliarySpheres.α0), 10e-12);
+        assertEquals("Arc lentgth from Equator of the starting point σ1 on auxiliary sphere", 43.99915364500, Math.toDegrees(testedEarth.auxiliarySpheres.σ1), 10e-12);
+        assertEquals("ω1, spherical longitudes of the starting point (from Equatorial point E) on the auxiliary sphere ", 20.32371827837, Math.toDegrees(testedEarth.auxiliarySpheres.ω1), 10e-12);
         
-        assertEquals("End point latitude", 41.79331020506, testedEarth.getEndPoint().getCoordinate()[1], 10e-11);
-        assertEquals("End point azimuth", 149.09016931807, testedEarth.getEndingAzimuth(), 10e-11);
+        /**
+         * Untested parameters indicated to facilitate potential debug :
+         * 
+         * k² = 0.00574802962857
+         * ε = 0.00143289220416
+         * A1 coefficient = 1.00143546236207
+         * I1(σ1) = 0.76831538886412
+         */
+                
+        assertEquals("Start point's distance from Equatorial point E along the geodesic s1", 4883990.626232, testedEarth.spherical2EllipsoidalArcLength(testedEarth.auxiliarySpheres.σ1), 10e-7);
         
+        /**
+         *  s2 = 14 883 990.626 232
+         *  τ2 = 133.96266050208 °
+         */
+        
+        assertEquals("Arc lentgth from Equator of the ending point σ2 on auxiliary sphere", 133.92164083038, Math.toDegrees(testedEarth.auxiliarySpheres.σ2), 10e-12);
+        assertEquals("End point reduce latitude β2", 41.69771809250, Math.toDegrees(testedEarth.auxiliarySpheres.β2), 10e-12);
+        assertEquals("ω2, spherical longitudes of the starting point (from Equatorial point E) on the auxiliary sphere", 158.28412147112, Math.toDegrees(testedEarth.auxiliarySpheres.ω2), 10e-12);
+        
+        /**
+         * A3 coefficient = 0.99928424306
+         * I3(σ1) = 0.76773786069
+         * I3(σ2) = 2.33534322170
+         */
+        
+        assertEquals("λ01, longitudes of the starting point (from Equatorial point E)", 20.26715038016, Math.toDegrees(testedEarth.spherical2EllipsoidalLongitude(testedEarth.auxiliarySpheres.ω1, testedEarth.auxiliarySpheres.σ1)), 10e-12);
+        assertEquals("λ02, longitudes of the ending point (from Equatorial point E)", 158.11205042393, Math.toDegrees(testedEarth.spherical2EllipsoidalLongitude(testedEarth.auxiliarySpheres.ω2, testedEarth.auxiliarySpheres.σ2)), 10e-12);
+        
+        //==========
+        // Solution :
+        //==========
+        assertEquals("λ12, delta longitudes from the starting to the ending point", 137.84490004377,  Math.toDegrees(testedEarth.λ2 - testedEarth.λ1), 10e-12);
+        assertEquals("End point latitude φ2", 41.79331020506, testedEarth.getEndPoint().getCoordinate()[1], 10e-12);
+        assertEquals("End point azimuth α2", 149.09016931807, testedEarth.getEndingAzimuth(), 10e-12);
 
     }
 }
