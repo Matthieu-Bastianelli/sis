@@ -557,7 +557,7 @@ public class GeodeticCalculator {
      *
      * @throws IllegalStateException if the distance or azimuth has not been set.
      */
-    private void computeDistance() {
+    void computeDistance() {
         if (isInvalid(START_POINT | END_POINT)) {
             throw new IllegalStateException(Resources.format(
                     Resources.Keys.StartOrEndPointNotSet_1, Integer.signum(validity & START_POINT)));
