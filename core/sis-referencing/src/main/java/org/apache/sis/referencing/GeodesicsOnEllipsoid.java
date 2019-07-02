@@ -22,6 +22,7 @@ import org.opengis.geometry.coordinate.Position;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 import static java.lang.Math.*;
+import org.apache.sis.internal.referencing.Formulas;
 import org.apache.sis.internal.referencing.Resources;
 import org.apache.sis.util.ArgumentChecks;
 
@@ -63,12 +64,11 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
     */
     private double maxIterationNumber = 20; 
 
-    
     /**
      * Limit for λ variation to consider the starting and ending points as
      * nearly antipodal.
      */
-    private double nearly_antipodal_λ12 = PI*(1-1/360);
+    private double nearly_antipodal_λ12 = PI*(1-1/180);
             
 
     /**
@@ -212,9 +212,9 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
      * Arc Length conversion.
      * 
      * @param σ spherical arc length on the auxiliary sphere.
-     * @return I1(σ) coefficient according to Eq 15 in 
+     * @return I1(σ) coefficient according to 
      *  <a href="https://link.springer.com/content/pdf/10.1007%2Fs00190-012-0578-z.pdf">
-     * C.F.F Karney 's article.</a>
+     * Eq 15 in C.F.F Karney 's article.</a>
      */
     private double compute_I1(final double σ) {
         if (isInvalid(EXPAND_PARAMETER)) {
@@ -545,7 +545,7 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
             // Compute the  associated with the problem
             
             if (λ12>nearly_antipodal_λ12) {
-                α1Approximation = startingAzimuthNearlyAntipodal();       //not valid yet
+                α1Approximation = startingAzimuthNearlyAntipodal();     
             } else {
                 α1Approximation = startingAzimuthFirstApproximation(); //reduced latitudes are computed
             }
@@ -558,7 +558,7 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
         
         int count=0;
 
-        // While loop used to improve the azimtuh approximation 
+        // While loop used to improve the azimuth approximation 
         while (λ12 - λ12_approx > λ12_tolerance) {
             if(count > maxIterationNumber){
                 throw new ArithmeticException("Maximum iteration reached when trying to solve the inverse geodesic problem. Try to raise the λ12_tolerance value OR the maxIterationNumber.");
@@ -661,40 +661,94 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
 //            double σ12 = atan2( hypot(cos_β1*sin_β2 - sin_β1*cos_β2*cos_ω12, cos_β2*sin_ω12 ), sin_β1*sin_β2 + cos_β1*cos_β2*cos_ω12 );
 
     }
+    
+    /**
+     * Return an approximation of the azimuth at the starting point for nearly
+     * antipodal points.
+     * 
+     * According to C.F.F Karney's article, the method applied in 
+     * {@link #startingAzimuthFirstApproximation()} is "inadequate for nearly
+     * antipodal points". This method applies the more method suggested by the
+     * author for this case.
+     *
+     * @return Approximation of starting point's azimuth
+     */
     double startingAzimuthNearlyAntipodal() {
         if (isInvalid(REDUCED_LATITUDES)) {
             auxiliarySpheres.computeReducedLatitudes();
-//             throw new IllegalStateException("uncomputed βi reduced latitudes of starting and ending point.");
         }
         
-            throw new IllegalStateException("unfinished implementation.");
+        final double cos_β1 = auxiliarySpheres.cos_β1;
+        final double β1 = acos(cos_β1);
+        final double β2 = acos(auxiliarySpheres.cos_β2);
+        final double Δ = cos_β1*PI/ellipsoid.getInverseFlattening(); //correspond to Δ/(cos_β1*a) in (CFF Karney,2013)
 
-            //*********************************************************
-            //TODO FINISH IMPLEMENTING COMPUTING μ and particular case.
-            // then to choose the calling condition in {@link #computeDistance()} l.539
-            //*********************************************************
-//        final double cos_β1 = auxiliarySpheres.cos_β1;
-//        final double β1 = acos(cos_β1);
-//        final double β2 = acos(auxiliarySpheres.cos_β2);
-//        final double Δ = cos_β1*PI/ellipsoid.getInverseFlattening(); //correspond to Δ/(cos_β1*a) in (CFF Karney,2013)
-//
-//        final double x = (dλ2-dλ1 - PI) / Δ; //Eq 53
-//        final double y = (β2+β1) / (Δ*cos_β1); //Eq 53
-//        final double μ = ; //Eq 55  Appendice B from CFF Karney 2011 give a method of resolution.
-//        
-//        if(y==0){
-//            throw new IllegalStateException("undefined yet result for 0 value of y.");
-////            return atan2(-x, signum(?)*sqrt(max(0.1-x*x))); //Eq57 limit y -> 0 du cas générale nécessite l'expression de μ pour bonne compréhension. Quel signe et que signifie le sqrt(max(0.1-x²))?
-//        }else{
-//            return atan2(-x/(1+μ), y/μ);//Eq56 
-//        
-//        }
-            //*********************************************************
-
+        final double x = (dλ2-dλ1 - PI) / Δ; //Eq 53
+        final double y = (β2+β1) / (Δ*cos_β1); //Eq 53
+        
+        if(y<Formulas.LINEAR_TOLERANCE){   // Not sure about this tolerance, I would use a stricter rule.
+            return atan2(-x, signum(y)*sqrt(max(0, 1-x*x))); //Eq57
+        }else{            
+            final double μ = computeμ(x, y); //Eq 55  Appendice B from CFF Karney 2011 gives a method of resolution.
+            return atan2(-x/(1+μ), y/μ);//Eq56 
+        
+        }
+    }
+    /**
+     * Compute the positive root for the following equation according to 
+     *  <a href="https://arxiv.org/pdf/1102.1215.pdf">
+     * appendix B in C.F.F Karney's 2011 article</a>.
+     * 
+     * μ⁴ + 2*μ³ +(1 -x²-y²)*μ² - 2*y²*μ - y² = 0 
+     * 
+     * Given x and y the coordinate on a plane coordinate system centered on the antipodal
+     * point.
+     * 
+     * @param x 
+     * @param y    
+     * @return The positive root of the equation.
+     */
+    private double computeμ(final double x, final double y){
+                
+        //Particular case 
+        if( (y == 0) ){  
+            throw new IllegalArgumentException("Unhandle case (y==0) for positive root computation."); //The case should be managed by the calling method.
+        }
+        
+        final double X2 = x*x;
+        final double Y2 = y*y;
+        
+        final double r = (X2 + Y2 - 1)/6;
+        final double r3 = r*r*r;
+        final double S = X2*Y2/4;
+        final double S_2r3 = (S+2*r3);
+        final double d = S*S_2r3;
+//        double T;
+        double u;
+        if(d >= 0) {
+            final double sqrt_d = sqrt(d);
+            final double T = (S_2r3) >= 0 ? cbrt(S + r3 + sqrt_d) : cbrt(S + r3 - sqrt_d);
+            u=(T==0)? 0 :r+T+r*r/T;
+        } else{
+            // T is complex 
+            u = r*(1 + 2*cos(atan2(sqrt(-d),S-r3)/3));            
+        }
+        
+        final double v = sqrt(u*u + Y2);
+        final double w = ((v+u) -Y2)*squared_ECCENTRICITY/(2*v);
+        
+        //computation of the positive root
+        return (v+u)/(sqrt(v+u +w*w)+w);
+        
+        
     }
     
-    
-    
+    /**
+     * Method used to inverse the starting and ending point.
+     * 
+     * This method is used to reach the required conditions for {@link #computeDistance()}
+     * or to return to the initial condition after computation.
+     */
     private void startAndEndInversion(){
         final double φ1_inter = φ1;
         final double λ1_inter = λ1;

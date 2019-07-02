@@ -195,8 +195,8 @@ public class GeodesicOnEllipsoidTest {
 //    public void computeDistanceTest() {
 //        GeodesicsOnEllipsoid testedEarth = new GeodesicsOnEllipsoid(HardCodedCRS.WGS84);
 //
-//        testedEarth.setStartGeographicPoint(-30.12345, 20);
-//        testedEarth.setEndGeographicPoint(-30.12344, 20.00005);
+//        testedEarth.setStartGeographicPoint(-30, 20);
+//        testedEarth.setEndGeographicPoint(29.9, 20.00005);
 //
 //        testedEarth.computeDistance();
 //
