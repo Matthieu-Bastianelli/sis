@@ -679,14 +679,11 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
         }
         
         final double cos_β1 = auxiliarySpheres.cos_β1;
-        final double β1 = acos(cos_β1);
-        final double β2 = acos(auxiliarySpheres.cos_β2);
         final double Δ = cos_β1*PI/ellipsoid.getInverseFlattening(); //correspond to Δ/(cos_β1*a) in (CFF Karney,2013)
-
-        final double x = (dλ2-dλ1 - PI) / Δ; //Eq 53
-        final double y = (β2+β1) / (Δ*cos_β1); //Eq 53
+        final double x = (λ2-λ1 - PI) / Δ; //Eq 53
+        final double y = (auxiliarySpheres.β2+auxiliarySpheres.β1) / (Δ*cos_β1); //Eq 53
         
-        if(y<Formulas.LINEAR_TOLERANCE){   // Not sure about this tolerance, I would use a stricter rule.
+        if(abs(y)<Formulas.LINEAR_TOLERANCE){   // Not sure about this tolerance, I would use a stricter rule.
             return atan2(-x, signum(y)*sqrt(max(0, 1-x*x))); //Eq57
         }else{            
             final double μ = computeμ(x, y); //Eq 55  Appendice B from CFF Karney 2011 gives a method of resolution.
@@ -848,7 +845,7 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
          * point).
          * (In radians)
          */
-//        double β1, β2;
+        double β1, β2;
         double sin_β1, cos_β1;
         double sin_β2, cos_β2;
 
@@ -1098,11 +1095,11 @@ final class GeodesicsOnEllipsoid extends GeodeticCalculator {
                         Resources.Keys.StartOrEndPointNotSet_1, Integer.signum(validity & START_POINT)));
             }
 //            β1 = computeβ(ellipsoid.getInverseFlattening(), φ1);
-            double β1 = atan((1 - (1 / ellipsoid.getInverseFlattening())) * tan(φ1));
+            β1 = atan((1 - (1 / ellipsoid.getInverseFlattening())) * tan(φ1));
             cos_β1 = cos(β1);
             sin_β1 = sin(β1);
 //            β2 = computeβ(ellipsoid.getInverseFlattening(), φ2);
-            double β2 = atan((1 - (1 / ellipsoid.getInverseFlattening())) * tan(φ2));
+            β2 = atan((1 - (1 / ellipsoid.getInverseFlattening())) * tan(φ2));
             cos_β2 = cos(β2);
             sin_β2 = sin(β2);
             validity |= REDUCED_LATITUDES;

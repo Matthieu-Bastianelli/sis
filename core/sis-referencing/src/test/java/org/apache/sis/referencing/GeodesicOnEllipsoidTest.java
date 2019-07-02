@@ -203,5 +203,22 @@ public class GeodesicOnEllipsoidTest {
 //        assertEquals("geodesic approximation", 4.944208, testedEarth.geodesicDistance, 10e-9); // Valeur non valide du geodesic mais donne un ordre de grandeur.
 //
 //    }
+    
+    /**
+     * Test of {@link GeodesicsOnEllipsoid#startingAzimuthNearlyAntipodal()} according
+     * to the sample described in Table 4 of C.F.F Karney (2013) article. 
+     */
+    @Test
+    public void startingAzimuthNearlyAntipodalTest() {
+        
+        GeodesicsOnEllipsoid testedEarth = new GeodesicsOnEllipsoid(HardCodedCRS.WGS84);
+        testedEarth.setStartGeographicPoint(-30, 0);
+        testedEarth.setEndGeographicPoint(29.9, 179.8);
+        
+//        assertEquals("Nearly antipodal starting and ending points case,  azimuth approximation", 0.231633, testedEarth.computeμ(-0.382344, -0.220189), 10e-6);
+        assertEquals("Nearly antipodal starting and ending points case,  azimuth approximation", toRadians(161.914), testedEarth.startingAzimuthNearlyAntipodal(), 10e-3);
+        
+
+    }
 
 }
